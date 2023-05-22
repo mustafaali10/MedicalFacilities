@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "970632942493",
+    "project_id": "medicalfacilitiescopy",
+    "storage_bucket": "medicalfacilitiescopy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970632942493:android:0d979f6aa956a7c0dc9574",
+        "android_client_info": {
+          "package_name": "com.example.medicalfacilitiescopy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970632942493-6crvirobmsklc8gmj5mtge24tpn03d4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4aFm1ETiTxVChedNQwLnYRM0boK60HfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970632942493-6crvirobmsklc8gmj5mtge24tpn03d4k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
