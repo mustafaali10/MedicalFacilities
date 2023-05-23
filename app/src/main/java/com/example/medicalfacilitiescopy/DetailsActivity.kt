@@ -43,21 +43,27 @@ class DetailsActivity : AppCompatActivity() {
         // Create a FusedLocationProviderClient
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
+        if(hasLocationPermission()){
+            retrieveLocation()
+        }
+        else{
+            requestLocationPermission()
+        }
         requestLocationPermission()
 
 
     }
 
+    private fun hasLocationPermission(): Boolean {
+
+        return ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED
+    }
+
+
+
     private fun requestLocationPermission() {
 
-        if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED){
-
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),LOCATION_PERMISSION_REQUEST_CODE)
-        }
-
-        else{
-            retrieveLocation()
-        }
+        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),LOCATION_PERMISSION_REQUEST_CODE)
 
 
 
@@ -65,30 +71,23 @@ class DetailsActivity : AppCompatActivity() {
 
     private fun retrieveLocation() {
 
+        try {
+            fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
 
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            return
-        }
-        fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
+                if (location != null) {
+                    val userLatitude = location.latitude
+                    val userLongitude = location.longitude
 
-            if (location !=null){
-                val userLatitude=location.latitude
-                val userLongitude=location.longitude
+                    queryNearestHospitals(userLatitude, userLongitude)
 
-                queryNearestHospitals(userLatitude,userLongitude)
-
+                } else {
+                    Toast.makeText(this, "Turn On Location Permission", Toast.LENGTH_SHORT).show()
+                }
             }
+        } catch(e:SecurityException){
 
-            else{
-                Toast.makeText(this,"No location found",Toast.LENGTH_SHORT).show()
-            }
+            Toast.makeText(this, "Failed to retrieve location: ${e.message}", Toast.LENGTH_SHORT).show()
+
         }
 
     }

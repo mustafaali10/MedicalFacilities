@@ -45,7 +45,7 @@ class HospitalRegistration : AppCompatActivity() {
 
         val registerHospitalButton: Button =findViewById(R.id.saveButton)
 
-        val apiKey="AIzaSyAugtxJPD-6X0UA14vX5c9N-4JPccnN5Ag"
+        val apiKey="your_api_key
 
         // Initialize Places SDK
         Places.initialize(applicationContext,apiKey)

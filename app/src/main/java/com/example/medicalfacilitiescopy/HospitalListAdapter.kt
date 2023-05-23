@@ -59,7 +59,11 @@ RecyclerView.Adapter<HospitalListAdapter.HospitalViewHolder>(){
                 cos(Math.toRadians(lat1)) * cos(Math.toRadians(lat2)) *
                 sin(dLon / 2) * sin(dLon / 2)
         val c = 2 * atan2(sqrt(a), sqrt(1 - a))
-        return radius * c
+
+        val exactDistance = (radius * c)
+        val decimalFormat = java.text.DecimalFormat("#.00")
+        val formattedDistance = decimalFormat.format(exactDistance)
+        return formattedDistance.toDouble()
 
     }
 }
