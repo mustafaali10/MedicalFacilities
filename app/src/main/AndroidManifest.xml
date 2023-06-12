@@ -17,19 +17,19 @@
         android:theme="@style/Theme.MedicalFacilitiesCopy"
         tools:targetApi="31">
         <activity
-            android:name=".DetailsActivity"
+            android:name=".ViewModel.DetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainScreen"
+            android:name=".ViewModel.MainScreen"
             android:exported="false" />
         <activity
-            android:name=".HospitalRegistration"
+            android:name=".ViewModel.HospitalRegistration"
             android:exported="false" />
         <activity
-            android:name=".LoginScreen"
+            android:name=".ViewModel.LoginScreen"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ViewModel.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

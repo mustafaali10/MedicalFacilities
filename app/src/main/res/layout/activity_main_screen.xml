@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainScreen"
+    tools:context=".ViewModel.MainScreen"
     android:orientation="vertical">
 
     <LinearLayout
@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/navigation"/>
+            android:src="@drawable/menu"/>
 
     </LinearLayout>
 
@@ -36,7 +36,7 @@
         android:textAppearance="@font/sf_pro_rounded_heavy"
         app:queryHint="Search"
         app:iconifiedByDefault="false"
-        android:queryBackground="@android:color/transparent"
+        android:queryBackground="@android:color/white"
         android:layout_gravity="center"
         android:layout_marginHorizontal="30sp"
         android:layout_marginTop="20sp"

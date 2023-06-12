@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "970632942493",
+    "firebase_url": "https://medicalfacilitiescopy-default-rtdb.firebaseio.com",
     "project_id": "medicalfacilitiescopy",
     "storage_bucket": "medicalfacilitiescopy.appspot.com"
   },
@@ -14,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "970632942493-6crvirobmsklc8gmj5mtge24tpn03d4k.apps.googleusercontent.com",
+          "client_id": "970632942493-n56oqugb3lo3ld9835b7dlodt309vdvq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

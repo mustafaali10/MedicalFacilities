@@ -1,136 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HospitalRegistration"
-    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/hospital_teal">
 
-
-
-    <ImageView
-        android:src="@drawable/logo_64"
-        android:layout_width="55sp"
-        android:layout_height="55sp"
-        android:layout_marginTop="20sp"
-        android:background="@drawable/circle"
-        android:layout_gravity="center"
-        android:layout_marginBottom="15sp"
-        />
-
-    <TextView
-        android:text="Hospital Registration Form"
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/sf_pro_rounded_heavy"
+        tools:context=".ViewModel.HospitalRegistration"
+        android:orientation="vertical"
+        android:background="@color/hospital_teal">
 
-        />
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="330sp"
-        android:layout_height="470sp"
-        app:cardCornerRadius="20sp"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/white">
 
-        <ScrollView
+        <ImageView
+            android:src="@drawable/logo_64"
+            android:layout_width="55sp"
+            android:layout_height="55sp"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/circle"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15sp"
+            android:contentDescription="Medical Facilities Logo" />
+
+        <TextView
+            android:text="Hospital Registration Form"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/sf_pro_rounded_heavy"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="17sp">
+            />
 
-            <EditText
-                android:hint="Hospital Name"
-                android:id="@+id/nameEditText"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="330sp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20sp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/white">
+
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:background="@drawable/loginform_bg"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:layout_marginBottom="30sp" />
+                android:layout_height="match_parent">
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/addressEditText"
-                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter a location"
-                tools:layout="@layout/place_autocomplete_fragment"
-                android:layout_marginBottom="15sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="17sp">
 
+                    <EditText
+                        android:hint="Hospital Name"
+                        android:id="@+id/nameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="50sp"
+                        android:background="@drawable/loginform_bg"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:layout_marginBottom="30sp" />
 
-            <TextView
-                android:id="@+id/Facilities"
-                android:text="Select Available Facilities"
-                android:textSize="15sp"
-                android:layout_width="200sp"
-                android:layout_height="50sp"
-                android:gravity="center"
-                android:textColor="@color/hospital_teal"
-                android:fontFamily="@font/sf_pro_text_medium"
-                android:layout_marginBottom="10sp"/>
-
-            <CheckBox
-                android:id="@+id/mri"
-                android:text="MRI"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_pro_text_medium"/>
-
-            <CheckBox
-                android:text="X-Ray"
-                android:id="@+id/xray"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_pro_text_medium"/>
-            <CheckBox
-                android:text="C.T Scan"
-                android:id="@+id/ctscan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_pro_text_medium"/>
-
-            <CheckBox
-                android:text="Ultrasound"
-                android:id="@+id/ultrasound"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_pro_text_medium"/>
-
-            <CheckBox
-                android:text="Blood Test"
-                android:id="@+id/bloodtest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/sf_pro_text_medium"/>
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/addressEditText"
+                        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter a location"
+                        tools:layout="@layout/places_autocomplete_fragment"
+                        android:layout_marginBottom="15sp"/>
 
 
-        </LinearLayout>
-        </ScrollView>
+                    <TextView
+                        android:id="@+id/Facilities"
+                        android:text="Select Available Facilities"
+                        android:textSize="15sp"
+                        android:layout_width="200sp"
+                        android:layout_height="50sp"
+                        android:gravity="center"
+                        android:textColor="@color/hospital_teal"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:layout_marginBottom="10sp" />
 
-    </com.google.android.material.card.MaterialCardView>
-    <Button
-        android:id="@+id/saveButton"
-        android:text="Submit"
-        android:fontFamily="@font/sf_pro_text_bold"
-        android:textColor="@color/hospital_teal"
-        android:textSize="15sp"
-        android:layout_width="250sp"
-        android:layout_height="60sp"
-        android:layout_gravity="center"
-        android:layout_marginTop="15sp"
-        android:background="@drawable/button_bg"
-        android:backgroundTint="@color/white"
-        android:textAllCaps="false"/>
+                    <CheckBox
+                        android:id="@+id/mri"
+                        android:text="M.R.I"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:fontFamily="@font/sf_pro_text_medium"/>
+
+                    <CheckBox
+                        android:id="@+id/xray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:fontFamily="@font/sf_pro_text_medium"
+                        android:text="@string/x_ray" />
+                    <CheckBox
+                        android:text="C.T Scan"
+                        android:id="@+id/ctscan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:fontFamily="@font/sf_pro_text_medium"/>
+
+                    <CheckBox
+                        android:text="Ultrasound"
+                        android:id="@+id/ultrasound"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:fontFamily="@font/sf_pro_text_medium"/>
+
+                    <CheckBox
+                        android:text="Blood Test"
+                        android:id="@+id/bloodtest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:fontFamily="@font/sf_pro_text_medium"/>
 
 
-</LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+        </com.google.android.material.card.MaterialCardView>
+        <Button
+            android:id="@+id/saveButton"
+            android:text="Submit"
+            android:fontFamily="@font/sf_pro_text_bold"
+            android:textColor="@color/hospital_teal"
+            android:textSize="15sp"
+            android:layout_width="250sp"
+            android:layout_height="60sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15sp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@color/white"
+            android:textAllCaps="false"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
+
